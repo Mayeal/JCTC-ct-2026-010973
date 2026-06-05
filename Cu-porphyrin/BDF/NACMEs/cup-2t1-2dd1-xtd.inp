@@ -1,0 +1,62 @@
+$compass
+title
+cup t1-ag
+basis
+x2c-TZVPall
+geometry
+file=cup-2t1.xyz
+end geometry
+check
+nosym
+$end
+
+$xuanyuan     # The xuanyuan module mainly computes one-electron and two-electron integrals as well as other required integrals.
+heff     
+21            # sf-X2C Hamiltonian
+nuclear
+1
+$end
+
+$scf
+ROKS          # or UKS 
+DFT
+PBE0
+spin
+2
+molden        # Control the output of molecular orbitals in Molden format.
+$end
+
+$tddft
+iroot         # Number of TDDFT roots to be calculated.
+40
+istore        # Save TDDFT results for subsequent response-property calculations.
+1
+crit_vec      # Convergence threshold for excitation vectors.
+1.d-6
+crit_e        # Convergence threshold for excitation energies.
+1.d-8
+gridtol       # Threshold for adaptive numerical integration grids.
+1.d-7
+iprt          # Control the print output level.
+2
+cthrd         # Print orbital excitation contributions larger than cthrd.
+0.0001
+$end
+
+$resp         # Calculate NACMEs
+iprt
+1
+QUAD          # Carry out second-order response computation
+FNAC          # Activate nonadiabatic coupling calculations.
+double        # Excited-state to excited-state NACMEs.  Use "single" for ground-state to excited-state NACMEs.
+norder        # Derivative order for geometry: 1 = analytical gradients
+1
+method        # Select calculation type: 1 = ground state, 2 = excited state.
+2
+nfiles        # Read results of the $tddft block where istore equals 1. 
+1
+pairs         # Specify which two sets of excited states are used for NAC vector calculations.
+1             # Number of excited-state pairs for NAC calculations.
+1 1 1 1 1 10  # (m1, irrep1, root1) = (1, 1, 1); (m2, irrep2, root2) = (1, 1, 10). Compute the NACME between the 1st and 10th TDDFT roots stored in the TDDFT result file with istore = 1 (m1, m2) 
+noresp        # Neglect the response contribution to the transition density matrix in NACME calculations.
+$end

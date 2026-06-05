@@ -1,0 +1,42 @@
+$compass
+title
+cup opt+freq
+basis
+x2c-SVPall
+geometry
+file=cup_1.xyz
+end geometry
+$end
+
+$bdfopt      # Molecular geometry optimization module.
+solver       # Specify the geometry optimizer
+1            # Use the built-in geometry optimizer in BDF.
+hess      
+final        # Calculate the Hessian after geometry optimization converges.
+usenumhess   # Calculate numerical Hessian.
+tolgrad
+1.d-4
+tolgrad
+5.d-4
+$end
+
+$xuanyuan
+heff
+21
+$end
+
+$scf
+ROKS
+DFT
+PBE0
+D3
+spin
+2
+molden
+threshconv
+1.d-9 1.d-8
+$end
+ 
+$resp   # Calculate DFT gradients.
+geom
+$end

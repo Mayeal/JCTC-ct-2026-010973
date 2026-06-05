@@ -1,0 +1,66 @@
+$compass
+title
+cup opt+freq
+basis
+x2c-SVPall
+geometry
+file=d2h_2t1_opt.xyz
+end geometry
+nosym
+$end
+
+$bdfopt
+solver
+1
+hess
+final
+usenumhess
+tolgrad
+1.d-4
+tolgrad
+5.d-4
+$end
+
+$xuanyuan
+heff
+21
+$end
+
+$scf
+ROKS
+DFT
+PBE0
+D3
+spin
+2
+molden
+threshconv
+1.d-9 1.d-8
+$end
+
+$tddft
+nroot
+5
+istore
+1
+gridtol
+1.d-7
+crit_vec
+1.d-7
+crit_e
+1.d-9
+$end
+
+$resp     # Calculate TDDFT gradients.
+geom
+gridtol
+1.d-7
+norder
+1         # Calculate analytical gradients.
+method  
+2
+nfiles
+1
+iroot     # Specify the root for which gradients are calculated.
+1
+$end
