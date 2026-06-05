@@ -1,0 +1,7 @@
+do_evc = 1
+
+&evc
+ffreq(1)="hessian_dxy.out"
+ffreq(2)="hessian_2t1.out"
+fnacme = "nacme.out"
+/
