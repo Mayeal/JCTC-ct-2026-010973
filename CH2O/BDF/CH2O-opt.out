@@ -1,0 +1,1823 @@
+#!awk.bdf.output
+====================== BDF version information ============================
+commit d20b5893821ba2e991d79cc6efaee2bb18de4c42
+Author: Zikuan Wang <zwang@kofo.mpg.de>
+Date:   Sun Nov 30 18:21:19 2025 +0800
+
+    implemented GS-ES X-TDDFT NAC
+===========================================================================
+BDFHOME     = /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full 
+BDF_TMPDIR  = /tmp 
+BDF_MPIRUN  = None 
+BDF_MPIROOT = None 
+|---------------------------------------------------------------------|
+ Could not find mpirun. Set to serial running ...
+
+
+(' BDFHOME     = ', '/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full')
+(' BDF_WORKDIR = ', '/apps/users/wzk/bdf/test/CH2O')
+(' BDF_TMPDIR  = ', '/apps/users/wzk/scratch/CH2O-opt_362')
+(' BDFTASK     = ', 'CH2O-opt')
+
+  BDF parallel running information ...
+('  BDF_MASTER_NODE', 'cnode03')
+('  BDF_MPIROOT = ', 'None')
+  Total number of computational nodes   = 1
+  Number of processes per node          = 1
+  Number of openmp threads per process  = 4
+
+
+('  Singlepoint_task = ', True)
+('  Fragmp2_task     = ', False)
+
+
+$compass
+title
+ch2o
+basis
+def2-svp
+geometry
+C 0. 0. 0.
+O 0. 0. 1.2
+H 0. -1.0 -0.2
+H 0. 1.0 -0.2
+end geometry
+restart
+$end
+$bdfopt
+solver
+1
+hess
+final
+usenumhess
+$end
+$xuanyuan
+$end
+$scf
+roks
+dft
+b3lyp
+charge
+1
+spinmulti
+2
+$end
+$resp
+geom
+$end
+$compass
+title
+ch2o
+basis
+def2-svp
+geometry
+C 0. 0. 0.
+O 0. 0. 1.2
+H 0. -1.0 -0.2
+H 0. 1.0 -0.2
+end geometry
+restart
+$end
+('tmpstdin ', True)
+('npro is ', 1)
+('\n BDF command: ', '/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/bin/compass.x /apps/users/wzk/scratch/CH2O-opt_362/CH2O-optXX0.compass.inp')
+  BDF process        0 of        1 on Serial  
+ 
+|******************************************************************************|
+ 
+    Start running module compass
+    Current time   2025-12-22  15:46:57
+ 
+|******************************************************************************|
+
+ ++++++++++ Reading compass input ++++++++++++++++++
+ TITLE
+ BASIS
+ Input Basis set is DEF2-SVP
+ Spherical GTO 5d,7f
+ GEOMETRY
+ C       0.00000000      0.00000000      0.00000000
+ O       0.00000000      0.00000000      1.20000000
+ H       0.00000000     -1.00000000     -0.20000000
+ H       0.00000000      1.00000000     -0.20000000
+ Number of atoms:        4
+ RESTART
+ $END
+ ++++++++++ End of reading compass input +++++++++++++
+
+
+ Read molecular geometry from punch file
+C        0.000000000000     0.000000000000    -0.989889751200
+O        0.000000000000     0.000000000000     1.259001554300
+H       -1.850367657300     0.000000000000    -2.066336963700
+H        1.850367657300     0.000000000000    -2.066336963700
+
+|-------------------------------------------------------------------------------------------|
+
+ Atom           Cartcoord(Bohr)                 Charge Basis Auxbas Uatom Nstab Alink  Mass
+  C        0.000000     0.000000    -0.989890     6.00    1     0     0     0   E     11.9967
+  O        0.000000     0.000000     1.259002     8.00    2     0     0     0   E     15.9949
+  H       -1.850368     0.000000    -2.066337     1.00    3     0     0     0   E      1.0073
+  H        1.850368     0.000000    -2.066337     1.00    3     0     0     0   E      1.0073
+ 
+|--------------------------------------------------------------------------------------------|
+
+  End of reading atomic basis sets ..
+ Printing basis sets for checking ....
+
+ Atomic label:  C    6
+ Maximum L  2 7s4p1d ----> 3s2p1d NBF =  14
+ #--->s function
+      Exp Coef          Norm Coef       Con Coef
+          1238.401694   0.527426E+03    0.005517    0.000000    0.000000
+           186.290050   0.127396E+03    0.041089    0.000000    0.000000
+            42.251176   0.418691E+02    0.182254    0.000000    0.000000
+            11.676558   0.159588E+02    0.468285    0.000000    0.000000
+             3.593051   0.659345E+01    0.445758    0.000000    0.000000
+             0.402451   0.127659E+01    0.000000    1.000000    0.000000
+             0.130902   0.549825E+00    0.000000    0.000000    1.000000
+ #--->p function
+      Exp Coef          Norm Coef       Con Coef
+             9.468097   0.484521E+02    0.056888    0.000000
+             2.010355   0.698353E+01    0.312941    0.000000
+             0.547710   0.137459E+01    0.760650    0.000000
+             0.152686   0.278441E+00    0.000000    1.000000
+ #--->d function
+      Exp Coef          Norm Coef       Con Coef
+             0.800000   0.176578E+01    1.000000
+ 
+
+ Atomic label:  O    8
+ Maximum L  2 7s4p1d ----> 3s2p1d NBF =  14
+ #--->s function
+      Exp Coef          Norm Coef       Con Coef
+          2266.176779   0.829823E+03   -0.005389    0.000000    0.000000
+           340.870102   0.200427E+03   -0.040235    0.000000    0.000000
+            77.363135   0.659046E+02   -0.180082    0.000000    0.000000
+            21.479645   0.252078E+02   -0.468289    0.000000    0.000000
+             6.658943   0.104729E+02   -0.446926    0.000000    0.000000
+             0.809760   0.215666E+01    0.000000    1.000000    0.000000
+             0.255308   0.907430E+00    0.000000    0.000000    1.000000
+ #--->p function
+      Exp Coef          Norm Coef       Con Coef
+            17.721504   0.106074E+03    0.062630    0.000000
+             3.863551   0.158022E+02    0.333311    0.000000
+             1.048092   0.309374E+01    0.741486    0.000000
+             0.276415   0.584706E+00    0.000000    1.000000
+ #--->d function
+      Exp Coef          Norm Coef       Con Coef
+             1.200000   0.359002E+01    1.000000
+ 
+
+ Atomic label:  H    1
+ Maximum L  1 4s1p ----> 2s1p NBF =   5
+ #--->s function
+      Exp Coef          Norm Coef       Con Coef
+            13.010701   0.173077E+02    0.033485    0.000000
+             1.962257   0.418873E+01    0.234722    0.000000
+             0.444538   0.137546E+01    0.813770    0.000000
+             0.121950   0.521375E+00    0.000000    1.000000
+ #--->p function
+      Exp Coef          Norm Coef       Con Coef
+             0.800000   0.220723E+01    1.000000
+ 
+ 
+
+ Molecular center of mass
+         0.00000000     0.00000000     0.13662030
+
+ Molecular center of nuclear charge
+         0.00000000     0.00000000    -0.00000000
+ [molesym]
+ 
+ Auto decide molecular point group! Rotate coordinates into standard orientation!
+ Threshold= 0.10000E-08 0.10000E-11 0.10000E-03
+ 
+ zgeomsort being called!
+gsym: C02V, noper=    4
+ Exiting zgeomsort....
+ Representation generated
+  Binary group is observed ...
+  Point group name C(2V)   
+  User set point group as C(2V)   
+  Largest Abelian Subgroup C(2V)                        4
+ Representation generated
+ C|2|V|                     2
+ Symmetry check OK
+ Molecule has been symmetrized
+  Number of symmery unique centers:                      3
+
+|-------------------------------------------------------------------------------------------|
+
+ Atom           Cartcoord(Bohr)                 Charge Basis Auxbas Uatom Nstab Alink  Mass
+  C        0.000000    -0.000000    -0.989890     6.00    1     0     0     0   E     11.9967
+  O       -0.000000     0.000000     1.259002     8.00    2     0     0     0   E     15.9949
+  H       -1.850368     0.000000    -2.066337     1.00    3     0     0     0   E      1.0073
+  H        1.850368    -0.000000    -2.066337     1.00    3     0     0     0   E      1.0073
+ 
+|--------------------------------------------------------------------------------------------|
+
+ rep A1       * A1       = A1                           1
+ rep A1       * A2       = A2                           1
+ rep A1       * B1       = B1                           1
+ rep A1       * B2       = B2                           1
+ rep A2       * A2       = A1                           1
+ rep A2       * B1       = B2                           1
+ rep A2       * B2       = B1                           1
+ rep B1       * B1       = A1                           1
+ rep B1       * B2       = A2                           1
+ rep B2       * B2       = A1                           1
+Number of irreps:    4
+IRREP:   3   4   1
+DIMEN:   1   1   1
+
+ Irreps of multipole moment operators ...
+ Operator  Component    Irrep       Row
+  Dipole       x           B1          1
+  Dipole       y           B2          1
+  Dipole       z           A1          1
+  Quadpole     xx          A1          1
+  Quadpole     xy          A2          1
+  Quadpole     yy          A1          1
+  Quadpole     xz          B1          1
+  Quadpole     yz          B2          1
+  Quadpole     zz          A1          1
+ 
+ Generate symmetry adapted orbital ...
+ Print Multab
+  1  2  3  4
+  2  1  4  3
+  3  4  1  2
+  4  3  2  1
+
+|--------------------------------------------------|
+          Symmetry adapted orbital                   
+  101001   101    0    1
+  102001   102    0    1
+  103001   103    0    1
+  102102   102    1    2
+  103102   103    1    2
+  103203   103    2    3
+  103205   103    2    5
+  201001   201    0    1
+  202001   202    0    1
+  203001   203    0    1
+  202102   202    1    2
+  203102   203    1    2
+  203203   203    2    3
+  203205   203    2    5
+  301001   301    0    1
+  401001   401    0    1
+  302001   302    0    1
+  402001   402    0    1
+  302102   302    1    2
+  402102   402    1    2
+  302103   302    1    3
+  402103   402    1    3
+  103201   103    2    1
+  203201   203    2    1
+  302101   302    1    1
+  402101   402    1    1
+  102103   102    1    3
+  103103   103    1    3
+  103204   103    2    4
+  202103   202    1    3
+  203103   203    1    3
+  203204   203    2    4
+  301001   301    0    1
+  401001   401    0    1
+  302001   302    0    1
+  402001   402    0    1
+  302102   302    1    2
+  402102   402    1    2
+  302103   302    1    3
+  402103   402    1    3
+  102101   102    1    1
+  103101   103    1    1
+  103202   103    2    2
+  202101   202    1    1
+  203101   203    1    1
+  203202   203    2    2
+  302101   302    1    1
+  402101   402    1    1
+
+  Total number of basis functions:      38      38
+
+  Number of irreps:   4
+  Irrep :   A1        A2        B1        B2      
+  Norb  :     18         3        10         7
+|--------------------------------------------------|
+
+Total number of shells:       10
+ 
+Number of atoms:       4
+Number of basis functions:      38
+ 
+|******************************************************************************|
+ 
+    Total cpu     time:          0.02  S
+    Total system  time:          0.01  S
+    Total wall    time:          0.04  S
+ 
+    Current time   2025-12-22  15:46:57
+    End running module compass
+|******************************************************************************|
+ 
+$bdfopt
+solver
+1
+hess
+final
+usenumhess
+$end
+('tmpstdin ', True)
+('npro is ', 1)
+('\n BDF command: ', '/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/bin/bdfopt.x /apps/users/wzk/scratch/CH2O-opt_362/CH2O-optXX1.bdfopt.inp')
+  BDF process        0 of        1 on Serial  
+ 
+|******************************************************************************|
+ 
+    Start running module bdfopt
+    Current time   2025-12-22  15:46:57
+ 
+|******************************************************************************|
+
+|-------------------------------------------------------------------------------------------|
+
+ Atom           Cartcoord(Bohr)                 Charge Basis Auxbas Uatom Nstab Alink  Mass
+  C        0.000000    -0.000000    -0.989890     6.00    1     0     1     4   E     11.9967
+  O       -0.000000     0.000000     1.259002     8.00    2     0     1     4   E     15.9949
+  H       -1.850368     0.000000    -2.066337     1.00    3     0     1     2   E      1.0073
+  H        1.850368    -0.000000    -2.066337     1.00    3     0     0     0   E      1.0073
+ 
+|--------------------------------------------------------------------------------------------|
+
+ 
+ [bdfopt_input]
+ 
+BDFOPT - Electron computation method :  SCF
+ 
+ [bdfopt_input_prt]
+ 
+  Print Level (iprt)          =                     0
+  Solver                      =                     1
+  MaxCycle                    =                    -1
+  TolGrad                     =  3.000000000000000E-004
+  TolStep                     =  1.200000000000000E-003
+  Opt Method (iopt)           =                     3
+  Coord System (icoord)       =                     0
+  Do Multistate? (imulti)     =                     0
+  Do Line Search? (iline)     =                     1
+  Electron stucture calculation method : SCF  
+ 
+ 
+    GEOMETRY OPTIMIZATION IN REDUNDANT INTERNAL COORDINATE
+ 
+  Optimization will search for Local Minima...
+  Optimization Method: The Mixed method which combines GDIIS/GEDIIS with Rational Function method.
+   Hessian about setting: 
+    Initial Hessian:   Diagonal Guess on internal coordinate...
+    Update  Hessian:  BFGS Method for minima .
+  Convergence Tolerance (force-RMS/MAX, step-RMS/MAX) 0.300E-03 0.450E-03 0.120E-02 0.180E-02
+ 
+   Input Cartesian Coordinates for generating Internal Coordinates:
+       Atom           X                Y                Z
+       1C           0.000000000     -0.000000000     -0.989889751
+       2O          -0.000000000      0.000000000      1.259001554
+       3H          -1.850367657      0.000000000     -2.066336964
+       4H           1.850367657     -0.000000000     -2.066336964
+ 
+   Geometry Optimization step :    1
+ 
+  Single Point SCF for geometry optimization, also get force.
+ 
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ T bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217499
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962174994249
+     1       -0.0000000000        0.0000000000        0.0002429971
+     2        0.0000000000        0.0000000000       -0.0000049813
+     3       -0.0002469330       -0.0000000000       -0.0001190079
+     4        0.0002469330       -0.0000000000       -0.0001190079
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ 
+|******************************************************************************|
+ Summary printing of molecular geometry and gradient for this step
+
+ Atom         Coord           
+  C        0.000000      -0.000000      -0.523827
+  O       -0.000000       0.000000       0.666235
+  H       -0.979172       0.000000      -1.093458
+  H        0.979172      -0.000000      -1.093458
+ State=  1
+ Energy=   -113.96217499
+ Gradient=
+  C       -0.00000000      -0.00000000       0.00024300
+  O        0.00000000       0.00000000      -0.00000498
+  H       -0.00024693       0.00000000      -0.00011901
+  H        0.00024693      -0.00000000      -0.00011901
+ 
+
+|******************************************************************************|
+
+|******************************************************************************|
+       Redundant internal coordinates on Angstrom/Degree 
+
+  Name         Definition         Value     Constraint
+  R1          1   2               1.1901    No  
+  R2          1   3               1.1328    No  
+  R3          1   4               1.1328    No  
+  A1          2   1   3           120.19    No  
+  A2          2   1   4           120.19    No  
+  A3          3   1   4           119.62    No  
+  D1          2   1   4   3       180.00    No  
+
+|******************************************************************************|
+
+ 
+    Good Job, Geometry Optimization converged in     1 iterations! 
+ 
+   Molecular Cartesian Coordinates (X,Y,Z) in Angstrom : 
+      C           0.00000000      -0.00000000      -0.52390135 
+      O          -0.00000000       0.00000000       0.66616316 
+      H          -0.97870546       0.00000000      -1.09338550 
+      H           0.97870546      -0.00000000      -1.09338550 
+ 
+                       Force-RMS    Force-Max     Step-RMS     Step-Max
+    Conv. tolerance :  0.3000E-03   0.4500E-03   0.1200E-02   0.1800E-02
+    Current values  :  0.1468E-03   0.2733E-03   0.4905E-03   0.9027E-03
+    Geom. converge  :     Yes          Yes          Yes          Yes 
+ 
+ 
+  Print Redundant internal coordinates of the converged geometry
+
+|******************************************************************************|
+       Redundant internal coordinates on Angstrom/Degree 
+
+  Name         Definition         Value     Constraint
+  R1          1   2               1.1901    No  
+  R2          1   3               1.1323    No  
+  R3          1   4               1.1323    No  
+  A1          2   1   3           120.19    No  
+  A2          2   1   4           120.19    No  
+  A3          3   1   4           119.61    No  
+  D1          2   1   4   3       180.00    No  
+
+|******************************************************************************|
+
+ 
+ === BDFOPT: Stats ===
+ The optimizer has been called  1 time(s).
+ Total number of iterations:    1
+ =====================
+ 
+ 
+ [bdfopt_hess]
+ 
+ Start numerical Hessian calculation ...
+ 
+ bdfopt_hess: warning: the displacements will be done under the
+  C(1) group, but the user has specified a different point group.
+ If you have specified one of the following in the input file,
+  you may potentially converge to the wrong electronic state
+  when the point group is switched to C(1):
+  (1) ALPHA, BETA, OCCUP etc. in $SCF
+  (2) NROOT in $TDDFT
+  (3) IREP in $RESP
+  (4) Other keywords that refer to the irreps.
+ 
+ Energy and gradient at unperturbed geometry...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217164
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962171641343
+     1        0.0000000397        0.0000000743        0.0002431418
+     2       -0.0000000322       -0.0000002735       -0.0000029744
+     3       -0.0002469390        0.0000000997       -0.0001200793
+     4        0.0002469315        0.0000000995       -0.0001200881
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    1 (+x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96216613
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962166126819
+     1        0.0021952471        0.0000001184        0.0002355725
+     2       -0.0001587439       -0.0000003898       -0.0000029942
+     3       -0.0012604127        0.0000001377       -0.0006120989
+     4       -0.0007760904        0.0000001338        0.0003795206
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    1 (-x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96216617
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962166168346
+     1       -0.0021948304        0.0000001197        0.0002247558
+     2        0.0001585284       -0.0000003922        0.0000050876
+     3        0.0007781424        0.0000001385        0.0003808224
+     4        0.0012581596        0.0000001340       -0.0006106657
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    1 (+y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217001
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962170014396
+     1        0.0000014639        0.0006616952        0.0002357124
+     2       -0.0000005674       -0.0002143226        0.0000039402
+     3       -0.0002467966       -0.0002236972       -0.0001200271
+     4        0.0002459000       -0.0002236754       -0.0001196254
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    1 (-y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217001
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962170014487
+     1        0.0000000685       -0.0006615086        0.0002397138
+     2       -0.0000000605        0.0002136164        0.0000014910
+     3       -0.0002476379        0.0002239453       -0.0001206428
+     4        0.0002476299        0.0002239469       -0.0001205620
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    1 (+z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96216028
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962160279666
+     1       -0.0000000349       -0.0000000087        0.0046232153
+     2        0.0000000206        0.0000000171       -0.0037871184
+     3       -0.0006337928        0.0000000022       -0.0004180410
+     4        0.0006338071       -0.0000000106       -0.0004180559
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    1 (-z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96216289
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962162889932
+     1        0.0000000995        0.0000000392       -0.0040681729
+     2       -0.0000001846       -0.0000002790        0.0037028079
+     3        0.0001453812        0.0000001192        0.0001826852
+     4       -0.0001452961        0.0000001205        0.0001826798
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    2 (+x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217252
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962172515361
+     1       -0.0001587750        0.0000000352        0.0002392007
+     2        0.0001702014       -0.0000001387       -0.0000004065
+     3       -0.0002523923        0.0000000486       -0.0002261558
+     4        0.0002409659        0.0000000549       -0.0000126384
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    2 (-x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217252
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962172516334
+     1        0.0001581465        0.0000000358        0.0002359186
+     2       -0.0001704539       -0.0000001382        0.0000018287
+     3       -0.0002396871        0.0000000491       -0.0000118388
+     4        0.0002519945        0.0000000534       -0.0002259085
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    2 (+y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217148
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962171481380
+     1       -0.0000032499       -0.0002141730        0.0002589842
+     2        0.0000008152        0.0000692821       -0.0000125174
+     3       -0.0002503132        0.0000724428       -0.0001226970
+     4        0.0002527478        0.0000724481       -0.0001237697
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    2 (-y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217148
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962171482970
+     1        0.0000000892        0.0002139829        0.0002393186
+     2       -0.0000001055       -0.0000697683        0.0000013973
+     3       -0.0002468655       -0.0000721062       -0.0001203599
+     4        0.0002468818       -0.0000721083       -0.0001203560
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    2 (+z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96216133
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962161330023
+     1       -0.0000000172        0.0000000577       -0.0034620469
+     2       -0.0000000101       -0.0000001444        0.0041604809
+     3       -0.0003396803        0.0000000526       -0.0003492584
+     4        0.0003397075        0.0000000341       -0.0003491756
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    2 (-z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96216098
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962160975444
+     1        0.0000000375        0.0000000690        0.0040274852
+     2       -0.0000000214       -0.0000002561       -0.0042489027
+     3       -0.0001528647        0.0000000946        0.0001106648
+     4        0.0001528486        0.0000000925        0.0001107528
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    3 (+x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217149
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962171494323
+     1       -0.0010245251       -0.0000000089       -0.0001508281
+     2       -0.0000058175        0.0000000086       -0.0000980542
+     3        0.0008528978       -0.0000000020        0.0004281619
+     4        0.0001774447        0.0000000023       -0.0001792796
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    3 (-x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96216757
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962167572166
+     1        0.0010113881        0.0000000203        0.0006270553
+     2        0.0000061220       -0.0000001052        0.0000909195
+     3       -0.0013332865        0.0000000416       -0.0006578168
+     4        0.0003157764        0.0000000434       -0.0000601580
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    3 (+y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217148
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962171484151
+     1        0.0000010040       -0.0002238223        0.0002433196
+     2        0.0000000951        0.0000721848       -0.0000022997
+     3       -0.0002481024        0.0000761585       -0.0001208964
+     4        0.0002470032        0.0000754790       -0.0001201235
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    3 (-y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217148
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962171484099
+     1        0.0000011236        0.0002238683        0.0002395509
+     2        0.0000000539       -0.0000724074        0.0000002093
+     3       -0.0002471067       -0.0000760525       -0.0001202801
+     4        0.0002459293       -0.0000754084       -0.0001194800
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    3 (+z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217228
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962172276000
+     1       -0.0004977758        0.0000000012       -0.0000569226
+     2       -0.0001071712       -0.0000000392       -0.0002351324
+     3        0.0002980948        0.0000000190        0.0003866150
+     4        0.0003068522        0.0000000190       -0.0000945601
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    3 (-z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96216973
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962169733767
+     1        0.0004933602        0.0000000778        0.0005428672
+     2        0.0001068001       -0.0000002700        0.0002269651
+     3       -0.0007869909        0.0000001055       -0.0006254319
+     4        0.0001868306        0.0000000867       -0.0001444005
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    4 (+x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.9621676
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962167604166
+     1       -0.0010111194        0.0000000225        0.0006272675
+     2       -0.0000062056       -0.0000001030        0.0000909927
+     3       -0.0003162079        0.0000000351       -0.0000603494
+     4        0.0013335329        0.0000000454       -0.0006579108
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    4 (-x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217149
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962171494444
+     1        0.0010248778       -0.0000000118       -0.0001512628
+     2        0.0000055026        0.0000000052       -0.0000975518
+     3       -0.0001775422       -0.0000000052       -0.0001793418
+     4       -0.0008528382        0.0000000118        0.0004281564
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    4 (+y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217148
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962171482487
+     1       -0.0000011343       -0.0002238266        0.0002434980
+     2       -0.0000001154        0.0000721794       -0.0000027020
+     3       -0.0002467133        0.0000754884       -0.0001199700
+     4        0.0002479630        0.0000761588       -0.0001208260
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    4 (-y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217148
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962171482459
+     1       -0.0000010190        0.0002238632        0.0002409470
+     2       -0.0000001555       -0.0000724128       -0.0000007731
+     3       -0.0002462584       -0.0000753974       -0.0001196718
+     4        0.0002474329       -0.0000760530       -0.0001205020
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    4 (+z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96217227
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962172274971
+     1        0.0004978024        0.0000000030       -0.0000569201
+     2        0.0001069693       -0.0000000369       -0.0002351311
+     3       -0.0003067612        0.0000000212       -0.0000945728
+     4       -0.0002980105        0.0000000126        0.0003866239
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Displacing atom    4 (-z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+Derivorder   1 1
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsinglepoint.py CH2O-opt 
+ F bdfopt 1 >> CH2O-opt.out.tmp
+  istatus                      0
+('SYS.ARGV=', 'CH2O-opt', '1', 'bdfopt')
+
+SUMMARY via Extractors:
+=======================
+('job type =', ['SCF', 'RESP_GSGRAD'])
+()
+
+### JOB TYPE =SCF###
+E_tot=-113.96216977
+Converge=YES
+()
+### JOB TYPE =RESP_GSGRAD###
+Energy= -113.962169767915
+     1       -0.0004933225        0.0000000743        0.0005428394
+     2       -0.0001067766       -0.0000002736        0.0002270154
+     3       -0.0001869148        0.0000000997       -0.0001444468
+     4        0.0007870140        0.0000000995       -0.0006254080
+
+Final status: ierror=0
+()
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdf_extractor.py CH2O-opt 1
+  bdfopt
+  istatus                      0
+ Check consistency of numerical and analytic gradient:
+ 
+|--------------------------------------------------------------------------------|
+          Molecular gradient - Analytic gradient
+ 
+        Atom            X                    Y                    Z
+        C              0.0000000396          0.0000000716          0.0002431418
+        O             -0.0000000247         -0.0000000232         -0.0000029744
+        H             -0.0002469427         -0.0000000242         -0.0001200730
+        H              0.0002469278         -0.0000000242         -0.0001200944
+|--------------------------------------------------------------------------------|
+ 
+ 
+|--------------------------------------------------------------------------------|
+          Molecular gradient - Numerical gradient
+ 
+        Atom            X                    Y                    Z
+        C              0.0000041527          0.0000000091          0.0002610266
+        O              0.0000000973          0.0000001590         -0.0000354579
+        H             -0.0003922157         -0.0000000052         -0.0002542233
+        H              0.0003890278         -0.0000000028         -0.0002507056
+|--------------------------------------------------------------------------------|
+ 
+ 
+|--------------------------------------------------------------------------------|
+          Molecular gradient - Numerical gradient minus analytic gradient
+ 
+        Atom            X                    Y                    Z
+        C              0.0000041131         -0.0000000625          0.0000178848
+        O              0.0000001220          0.0000001822         -0.0000324835
+        H             -0.0001452730          0.0000000190         -0.0001341503
+        H              0.0001421000          0.0000000214         -0.0001306112
+|--------------------------------------------------------------------------------|
+ 
+ 
+|--------------------------------------------------------------------------------|
+          Molecular Hessian - Numerical Hessian (BDFOPT)
+ 
+                      1              2              3              4              5              6
+       1   0.4390075566   0.0000696419   0.0005341615  -0.0317008059  -0.0001668096  -0.0004068227
+       2   0.0000696419   0.1323200349  -0.0002023484  -0.0000192930  -0.0427884942   0.0001219604
+       3   0.0005341615  -0.0002023484   0.8691388200   0.0001700190   0.0009840112  -0.7489729187
+       4  -0.0317008059  -0.0000192930   0.0001700190   0.0340585759   0.0000346282  -0.0001111080
+       5  -0.0001668096  -0.0427884942   0.0009840112   0.0000346282   0.0138580220  -0.0006956106
+       6  -0.0004068227   0.0001219604  -0.7489729187  -0.0001111080  -0.0006956106   0.8409383625
+       7  -0.2037278106   0.0000376565  -0.0778507202  -0.0012287182  -0.0001662827  -0.0187895065
+       8  -0.0000059346  -0.0447741474   0.0001891948   0.0000016176   0.0144671992  -0.0001252698
+       9  -0.0991955413   0.0000321317  -0.0600294146  -0.0214138520  -0.0001251286  -0.0461009615
+      10  -0.2035167058  -0.0000878384   0.0778838249  -0.0011380575   0.0002984101   0.0187701287
+      11  -0.0000057540  -0.0447739004   0.0001283102   0.0000015633   0.0144672487  -0.0000962644
+      12   0.0990581853   0.0000383327  -0.0600211441   0.0213554921  -0.0001600547  -0.0461038148
+ 
+                      7              8              9             10             11             12
+       1  -0.2037278106  -0.0000059346  -0.0991955413  -0.2035167058  -0.0000057540   0.0990581853
+       2   0.0000376565  -0.0447741474   0.0000321317  -0.0000878384  -0.0447739004   0.0000383327
+       3  -0.0778507202   0.0001891948  -0.0600294146   0.0778838249   0.0001283102  -0.0600211441
+       4  -0.0012287182   0.0000016176  -0.0214138520  -0.0011380575   0.0000015633   0.0213554921
+       5  -0.0001662827   0.0144671992  -0.0001251286   0.0002984101   0.0144672487  -0.0001600547
+       6  -0.0187895065  -0.0001252698  -0.0461009615   0.0187701287  -0.0000962644  -0.0461038148
+       7   0.2186166561  -0.0000490859   0.1085530031  -0.0138493042  -0.0000220469  -0.0119507817
+       8  -0.0000490859   0.0152234478  -0.0000299494   0.0000533599   0.0150896133  -0.0000306224
+       9   0.1085530031  -0.0000299494   0.1012104350   0.0119465497  -0.0000140199   0.0049843447
+      10  -0.0138493042   0.0000533599   0.0119465497   0.2186400156   0.0000261675  -0.1085530317
+      11  -0.0000220469   0.0150896133  -0.0000140199   0.0000261675   0.0152234571  -0.0000146727
+      12  -0.0119507817  -0.0000306224   0.0049843447  -0.1085530317  -0.0000146727   0.1012002006
+ 
+|--------------------------------------------------------------------------------|
+ 
+ 
+ Entering thermochemistry analysis...
+ 
+ =======================================================================================================================
+       _/     _/                _/     _/            _/     _/
+      _/     _/            _/  _/|  _/_/            _/     _/  _/  _/        UniMoVib:          A unified interface for
+     _/     _/   _/_/_/       _/ |_/ _/   _/_/_/   _/     _/      _/           molecular harmonic vibrational frequency
+    _/     _/  _/    _/  _/  _/  _/ _/  _/    _/  _/     _/  _/  _/_/_/        calculations.
+   _/     _/  _/    _/  _/  _/     _/  _/    _/  _/    _/   _/  _/   _/
+  _/     _/  _/    _/  _/  _/     _/  _/    _/   _/  _/    _/  _/   _/       Ver. 1.5.3, Jul 28, 2025
+   _/_/_/   _/    _/  _/  _/     _/   _/_/_/     _/_/     _/  _/_/_/         https://github.com/zorkzou/UniMoVib
+ =======================================================================================================================
+
+
+ Data Format:     UniMoVib
+ MOLDEN file:     CH2O-opt-freq.molden
+ FCHK file:       CH2O-opt.umv
+
+
+ Cartesian coordinates (Angstrom)
+ ------------------------------------------------------------------------------------------------------------
+   No.   Atom    ZA                 X             Y             Z                Mass               IR charge
+ ------------------------------------------------------------------------------------------------------------
+     1    C       6            0.00000000    0.00000000   -0.52382710           11.99670900            3.2549
+     2    O       8            0.00000000    0.00000000    0.66623493           15.99491000            4.4038
+     3    H       1           -0.97917239    0.00000000   -1.09345843            1.00727647            0.6717
+     4    H       1            0.97917239    0.00000000   -1.09345843            1.00727647            0.6717
+ ------------------------------------------------------------------------------------------------------------
+ Reference of IR charge:
+ A. Milani, M. Tommasini, C. Castiglioni, Theor. Chem. Acc. 131, 1139 (2012).
+
+
+ <<< POINT GROUP SYMMETRY >>>
+ Electronic Wavefunctions      :  C2v 
+ Nuclear & Total Wavefunctions :  C2v 
+
+
+ ************************************
+ ***  Properties of Normal Modes  ***
+ ************************************
+
+ Results of vibrations:
+ Normal frequencies (cm^-1), reduced masses (AMU), force constants (mDyn/A), IR intensities (km/mol)
+
+                                                   1                                 2                                 3
+          Irreps                                  B2                                B1                                A1
+     Frequencies                            834.4638                         1053.2902                         1219.9916
+  Reduced masses                              1.3702                            1.3617                            1.0585
+ Force constants                              0.5622                            0.8901                            0.9282
+  IR intensities                             22.1162                          222.2238                          242.0076
+        Atom  ZA               X         Y         Z             X         Y         Z             X         Y         Z
+           1   6        -0.15400   0.00006   0.00005       0.00005   0.17278   0.00030      -0.00000  -0.00007   0.05373
+           2   8         0.08262  -0.00002  -0.00003      -0.00003  -0.04195  -0.00017      -0.00000   0.00002   0.03607
+           3   1         0.26105  -0.00025  -0.64544      -0.00013  -0.69584  -0.00017       0.36096   0.00029  -0.60630
+           4   1         0.26108  -0.00025   0.64541      -0.00000  -0.69584  -0.00068      -0.36094   0.00029  -0.60634
+
+                                                   4                                 5                                 6
+          Irreps                                  A1                                A1                                B2
+     Frequencies                           1743.1799                         2767.8777                         2867.5223
+  Reduced masses                             11.2817                            1.0365                            1.1090
+ Force constants                             20.1981                            4.6787                            5.3729
+  IR intensities                              1.7514                           19.5498                           92.6187
+        Atom  ZA               X         Y         Z             X         Y         Z             X         Y         Z
+           1   6         0.00006  -0.00048   0.71059       0.00004   0.00007  -0.05136      -0.09617  -0.00001  -0.00004
+           2   8        -0.00004   0.00012  -0.56151       0.00001  -0.00002  -0.00424      -0.00291   0.00000   0.00001
+           3   1         0.19623   0.00194   0.22702       0.61891  -0.00028   0.33930       0.59612   0.00003   0.37488
+           4   1        -0.19628   0.00194   0.22626      -0.61948  -0.00028   0.33972       0.59549   0.00003  -0.37449
+
+ Results of translations and rotations:
+
+                                                   1                                 2                                 3
+          Irreps                                  B2                                B1                                A1
+     Frequencies                             -0.0133                            0.0133                            0.0094
+  Reduced masses                              7.5015                            7.5015                            7.5015
+ Force constants                             -0.0000                            0.0000                            0.0000
+  IR intensities                           2634.3625                         2632.8930                         2629.1162
+        Atom  ZA               X         Y         Z             X         Y         Z             X         Y         Z
+           1   6         0.50000   0.00000   0.00000       0.00000   0.50000   0.00000       0.00000   0.00000   0.50000
+           2   8         0.50000   0.00000   0.00000       0.00000   0.50000   0.00000       0.00000   0.00000   0.50000
+           3   1         0.50000   0.00000   0.00000       0.00000   0.50000   0.00000       0.00000   0.00000   0.50000
+           4   1         0.50000   0.00000   0.00000       0.00000   0.50000   0.00000       0.00000   0.00000   0.50000
+
+                                                   4                                 5                                 6
+          Irreps                                  A2                                B1                                B2
+     Frequencies                             59.2545                           12.2747                           24.1870
+  Reduced masses                              1.0073                            3.6903                            2.7275
+ Force constants                              0.0021                            0.0003                            0.0009
+  IR intensities                              0.0000                           61.1825                           54.7265
+        Atom  ZA               X         Y         Z             X         Y         Z             X         Y         Z
+           1   6         0.00000   0.00000   0.00000       0.00000   0.32206   0.00000      -0.25788   0.00000   0.00000
+           2   8         0.00000   0.00000   0.00000       0.00000  -0.32088   0.00000       0.25693   0.00000   0.00000
+           3   1         0.00000  -0.70711   0.00000       0.00000   0.62981   0.00000      -0.50430   0.00000   0.42358
+           4   1         0.00000   0.70711   0.00000       0.00000   0.62981   0.00000      -0.50430   0.00000  -0.42358
+
+
+ *********************************************
+ ***   Thermal Contributions to Energies   ***
+ *********************************************
+
+ Molecular mass            :        30.006172    AMU
+ Electronic total energy   :      -113.962172    Hartree
+ Degeneracy of state       :         1
+ Scaling factor of Freq.   :         1.000000
+ Tolerance of scaling      :         0.000000    cm^-1
+ Rotational entropy        :         RRHO
+ Rotational symmetry number:         2
+ The C2v  point group is used to calculate rotational entropy.
+
+ Principal axes and moments of inertia in atomic units:
+                                     1                   2                   3
+     Eigenvalues --                  6.897548           45.150212           52.047760
+           X                         0.000000            1.000000            0.000000
+           Y                         0.000000            0.000000            1.000000
+           Z                         1.000000            0.000000            0.000000
+
+ Rotational temperatures            12.557189            1.918348            1.664122    Kelvin
+ Rot. constants A, B, C              8.727694            1.333320            1.156624    cm^-1
+                                   261.649671           39.971932           34.674714    GHz
+
+
+ #   1    Temperature =       298.15000 Kelvin         Pressure =         1.00000 Atm
+ ====================================================================================
+
+ Thermal correction energies                              Hartree            kcal/mol
+ Zero-point Energy                          :            0.023890           14.990955
+ Thermal correction to Energy               :            0.026838           16.841352
+ Thermal correction to Enthalpy             :            0.027783           17.433838
+ Thermal correction to Gibbs Free Energy    :            0.002845            1.785320
+
+ Sum of electronic and zero-point Energies  :         -113.938282
+ Sum of electronic and thermal Energies     :         -113.935333
+ Sum of electronic and thermal Enthalpies   :         -113.934389
+ Sum of electronic and thermal Free Energies:         -113.959327
+ ====================================================================================
+
+
+ ******************************
+ ***  Gradient Information  ***
+ ******************************
+
+ Cartesian gradients (a.u.)
+ --------------------------------------------------------------------
+   No.   Atom    ZA                 X             Y             Z
+ --------------------------------------------------------------------
+     1    C       6            0.00000004    0.00000007    0.00024314
+     2    O       8           -0.00000002   -0.00000002   -0.00000297
+     3    H       1           -0.00024694   -0.00000002   -0.00012007
+     4    H       1            0.00024693   -0.00000002   -0.00012009
+ --------------------------------------------------------------------
+
+ Convergence of gradients
+ --------------------------------------------------------------------
+                                  Value     Tolerance      Converged?
+ --------------------------------------------------------------------
+  Maximum Delta-X              0.000940      0.004000            Yes
+      RMS Delta-X              0.000397      0.002500            Yes
+    Maximum Force              0.000247      0.000800            Yes
+        RMS Force              0.000132      0.000500            Yes
+ Expected Delta-E              0.27D-06      0.50D-05            Yes
+ --------------------------------------------------------------------
+
+
+ UniMoVib job terminated correctly! Mon Dec 22 15:47:13 2025
+
+
+
+  BDF COMMAND: 
+ /apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/bin/unimovib.exe -b < CH2O-opt.u
+ nimovib.input
+  istatus                      0
+|******************************************************************************|
+ 
+    Total cpu     time:          0.01  S
+    Total system  time:          0.03  S
+    Total wall    time:         16.13  S
+ 
+    Current time   2025-12-22  15:47:13
+    End running module bdfopt
+|******************************************************************************|
+ 
+Total wall time          16.23 Seconds
+You should check your OUTFILE name, neither .bdflog or .bdfout!
+/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfsummary.py\bdf_summary\\b3lyp/DEF2-SVP\\1,2\\C,0.0000000000,0.0000000000,-0.9898897512\O,0.0000000000,0.0000000000,1.2590015543\H,-1.8503676573,0.0000000000,-2.0663369637\H,1.8503676573,0.0000000000,-2.0663369637\\b3lyp=GEOM\\
+Congratulations! BDF normal termination
+('/apps/users/wzk/scratch/CH2O-opt_362', '/apps/users/wzk/bdf/test/CH2O')
+ Warning! Removing scratch files. If you would like to keep scratch files for restaring. Please use -keeptmpdir
+
+Sender: Unischeduler System <wzk@mgt01>
+Subject: Job 214836: <#!/bin/bash
+#BSUB -J CH2O-opt
+#BSUB -o CH2O-opt.out
+#BSUB -n 4
+#BSUB -q cqueue
+#BSUB -R span[hosts=1]
+export BDFHOME=/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full
+export BDF_TMPDIR=~/scratch/CH2O-opt_362
+export USE_LIBCINT=no
+export LD_LIBRARY_PATH=/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/extlibs:/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/libso:/apps/software/intel2019/mkl/lib/intel64:/apps/software/lib64/glibc:$LD_LIBRARY_PATH
+export PATH=/apps/software/python3/bin:$PATH
+ulimit -s unlimited
+ulimit -t unlimited
+export OMP_NUM_THREADS=4
+export OMP_STACKSIZE=1G
+/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfdrv.py -tmpdir ~/scratch/CH2O-opt_362 -r CH2O-opt.inp > CH2O-opt.out
+rm -rf .CH2O-opt.wrk> Done
+
+Job <#!/bin/bash
+#BSUB -J CH2O-opt
+#BSUB -o CH2O-opt.out
+#BSUB -n 4
+#BSUB -q cqueue
+#BSUB -R span[hosts=1]
+export BDFHOME=/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full
+export BDF_TMPDIR=~/scratch/CH2O-opt_362
+export USE_LIBCINT=no
+export LD_LIBRARY_PATH=/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/extlibs:/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/libso:/apps/software/intel2019/mkl/lib/intel64:/apps/software/lib64/glibc:$LD_LIBRARY_PATH
+export PATH=/apps/software/python3/bin:$PATH
+ulimit -s unlimited
+ulimit -t unlimited
+export OMP_NUM_THREADS=4
+export OMP_STACKSIZE=1G
+/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfdrv.py -tmpdir ~/scratch/CH2O-opt_362 -r CH2O-opt.inp > CH2O-opt.out
+rm -rf .CH2O-opt.wrk> was submitted from host <mgt01> by user <wzk>.
+Job was executed on host(s) <4*cnode03>, in queue <cqueue>, as user <wzk>.
+</apps/users/wzk> was used as the home directory.
+</apps/users/wzk/bdf/test/CH2O> was used as the working directory.
+Started at 2025-12-22 15:46:56
+Results reported at 2025-12-22 15:47:13
+
+Your job looked like:
+
+------------------------------------------------------------
+# User input
+#!/bin/bash
+#BSUB -J CH2O-opt
+#BSUB -o CH2O-opt.out
+#BSUB -n 4
+#BSUB -q cqueue
+#BSUB -R span[hosts=1]
+export BDFHOME=/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full
+export BDF_TMPDIR=~/scratch/CH2O-opt_362
+export USE_LIBCINT=no
+export LD_LIBRARY_PATH=/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/extlibs:/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/libso:/apps/software/intel2019/mkl/lib/intel64:/apps/software/lib64/glibc:$LD_LIBRARY_PATH
+export PATH=/apps/software/python3/bin:$PATH
+ulimit -s unlimited
+ulimit -t unlimited
+export OMP_NUM_THREADS=4
+export OMP_STACKSIZE=1G
+/apps/users/wzk/bdf/bdf-pkg/build/bdf-pkg-full/sbin/bdfdrv.py -tmpdir ~/scratch/CH2O-opt_362 -r CH2O-opt.inp > CH2O-opt.out
+rm -rf .CH2O-opt.wrk
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :           37.19 sec.
+    Max Memory :               150 MB
+    Max Processes  :               9
+
+
+The output (if any) follows:
+

@@ -1,0 +1,38 @@
+$compass
+title
+CH2O
+basis
+def2-SVP
+geometry
+C 0. 0. 0.
+O 0. 0. 1.2
+H 0. -1.0 -0.2
+H 0. 1.0 -0.2
+end geometry
+restart
+$end
+
+$bdfopt
+solver
+1
+hess
+final
+usenumhess
+$end
+
+$xuanyuan
+$end
+
+$scf
+roks
+dft
+b3lyp
+charge
+1
+spinmulti
+2
+$end
+
+$resp
+geom
+$end

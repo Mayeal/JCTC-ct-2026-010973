@@ -1,0 +1,131 @@
+$compass
+title
+CH2O
+basis
+aug-cc-pVTZ
+geometry
+        C              0.0000000000         0.0000000000        -0.9898897512
+        O              0.0000000000         0.0000000000         1.2590015543
+        H             -1.8503676573         0.0000000000        -2.0663369637
+        H              1.8503676573         0.0000000000        -2.0663369637
+end geometry
+unit
+bohr
+$end
+
+$xuanyuan
+$end
+
+$scf
+roks
+dft
+b3lyp
+charge
+1
+spinmulti
+2
+threshconv
+1.d-10 1.d-8
+grid
+ultra fine
+gridtol
+1.d-9
+$end
+
+$tddft
+iroot
+4
+crit_e
+1.d-10
+crit_vec
+1.d-8
+istore
+1
+grid
+ultra fine
+gridtol
+1.d-9
+$end
+
+$resp
+iprt
+3
+quad
+fnac
+single
+norder
+1
+method
+2
+nfiles
+1
+states
+7 # note: use PairSym, not ExSym!
+1 2 1 # 1B2
+1 3 1 # 1A1
+1 2 2 # 2B2
+1 1 1 # 2B1 (ground state is 1B1)
+1 1 2 # 3B1
+1 4 1 # 1A2
+1 2 3 # 3B2
+ignore
+1
+grid
+ultra fine
+rtol
+1.d-12
+gridtol
+1.d-9
+$end
+
+$resp
+iprt
+3
+quad
+fnac
+double
+norder
+1
+method
+2
+nfiles
+1
+pairs
+21
+# 1B2 and ...
+1 2 1 1 3 1 # 1A1
+1 2 1 1 2 2 # 2B2
+1 2 1 1 1 1 # 2B1 (ground state is 1B1)
+1 2 1 1 1 2 # 3B1
+1 2 1 1 4 1 # 1A2
+1 2 1 1 2 3 # 3B2
+# 1A1 and ...
+1 3 1 1 2 2 # 2B2
+1 3 1 1 1 1 # 2B1 (ground state is 1B1)
+1 3 1 1 1 2 # 3B1
+1 3 1 1 4 1 # 1A2
+1 3 1 1 2 3 # 3B2
+# 2B2 and ...
+1 2 2 1 1 1 # 2B1 (ground state is 1B1)
+1 2 2 1 1 2 # 3B1
+1 2 2 1 4 1 # 1A2
+1 2 2 1 2 3 # 3B2
+# 2B1 and ...
+1 1 1 1 1 2 # 3B1
+1 1 1 1 4 1 # 1A2
+1 1 1 1 2 3 # 3B2
+# 3B1 and ...
+1 1 2 1 4 1 # 1A2
+1 1 2 1 2 3 # 3B2
+# 1A2 and ...
+1 4 1 1 2 3 # 3B2
+ignore
+1
+grid
+ultra fine
+rtol
+1.d-12
+gridtol
+1.d-9
+noresp
+$end

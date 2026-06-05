@@ -1,0 +1,48 @@
+{ "bagel" : [
+
+{
+  "title" : "molecule",
+  "basis" : "/apps/users/wzk/bagel/share/aug-cc-pvtz.json",
+  "df_basis" : "/apps/users/wzk/bagel/share/cc-pvtz-jkfit.json",
+  "geometry" : [
+    { "atom" : "C",  "xyz" : [   0.0000000000,         0.0000000000,        -0.9898897512 ] },
+    { "atom" : "O",  "xyz" : [   0.0000000000,         0.0000000000,         1.2590015543 ] },
+    { "atom" : "H",  "xyz" : [  -1.8503676573,         0.0000000000,        -2.0663369637 ] },
+    { "atom" : "H",  "xyz" : [   1.8503676573,         0.0000000000,        -2.0663369637 ] }
+  ],
+  "angstrom" : false
+},
+
+// ROHF initial guess orbitals
+{
+  "title" : "rohf",
+  "charge" : 1,
+  "nopen" : 1
+},
+
+{
+  "title" : "print",
+  "file" : "CH2O.molden",
+  "orbitals" : true
+},
+
+{
+  "title" : "casscf",
+  "nstate" : 10,
+  "nact" : 10,
+  "charge" : 1,
+  "nspin" : 1,
+  "nclosed" : 2,
+  // The active orbitals are chosen by visualizing CH2O.molden
+  "active" : [3,4,5,6,7,8,9,12,14,18]
+},
+
+// save orbitals for NACME calculations
+{
+  "title" : "print",
+  "file" : "CH2O.casscf.molden",
+  "orbitals" : true
+}
+
+]}
+
