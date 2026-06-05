@@ -1,0 +1,41 @@
+{ "bagel" : [
+
+{
+  "title" : "molecule",
+  "basis" : "molden",
+  "df_basis" : "/apps/users/wzk/bagel/share/cc-pvtz-jkfit.json",
+  "molden_file" : "/apps/users/wzk/bagel/test/CH2O.casscf.molden"
+},
+
+{
+  "title" : "nacme",
+  "target" : 0, // state 1, 0 = ground state, n = n-th excited state
+  "target2" : 1, // state 2
+  "nacmtype" : "etf", // turn on ETF so that the results are comparable with BDF
+  "method" : [ {
+    "title" : "caspt2",
+    "smith" : {
+      "method" : "caspt2",
+      "ms" : "true",
+      "xms" : "true",
+      "sssr" : "true",
+      "shift" : 0.2, // IPEA shift
+      "thresh" : 1.0e-6,
+      // For target=3 and target2=6, the convergence fails with default settings.
+      // One needs to comment out the above line and uncomment the next 3 lines
+      //"thresh" : 1.0e-4,
+      //"maxiter" : 300,
+      //"cimaxchunk" : 100000000,
+      "frozen" : true
+    },
+  "nstate" : 10,
+  "nact" : 10,
+  "charge" : 1,
+  "nspin" : 1,
+  "nclosed" : 2,
+  "active" : [3,4,5,6,7,8,9,10,11,12]
+  } ]
+}
+
+]}
+
