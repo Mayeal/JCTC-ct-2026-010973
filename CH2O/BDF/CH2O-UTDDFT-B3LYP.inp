@@ -24,20 +24,20 @@ charge
 1
 spinmulti
 2
-threshconv
+threshconv # SCF convergence criteria: first number - energy, second number - density matrix
 1.d-10 1.d-8
 grid
 ultra fine
-gridtol
+gridtol # tolerance for self-adaptive grid generation
 1.d-9
 $end
 
 $tddft
-iroot
+iroot # number of excited state for EACH IRREP. We need max. 3 states per irrep, so set 4 to be on the safe side
 4
-crit_e
+crit_e # TDDFT energy convergence threshold
 1.d-10
-crit_vec
+crit_vec # TDDFT excitation vector convergence threshold
 1.d-8
 istore
 1
@@ -47,6 +47,7 @@ gridtol
 1.d-9
 $end
 
+# This block calculates all ge NACMEs
 $resp
 iprt
 3
@@ -68,16 +69,17 @@ states
 1 1 2 # 3B1
 1 4 1 # 1A2
 1 2 3 # 3B2
-ignore
+ignore # ignore Wmo skewness checks. In sufficient new BDF versions this should be redundant
 1
 grid
 ultra fine
-rtol
+rtol # Z-vector convergence threshold
 1.d-12
 gridtol
 1.d-9
 $end
 
+# This calculates all ee NACMEs
 $resp
 iprt
 3
@@ -127,5 +129,5 @@ rtol
 1.d-12
 gridtol
 1.d-9
-noresp
+noresp # use EOM formalism, not TDPT formalism
 $end
