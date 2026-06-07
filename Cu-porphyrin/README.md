@@ -14,5 +14,5 @@ Detailed instructions for MOMAP calculations can be found on the official MOMAP 
 
 ISC and RISC
 
-SC and RISC rates were calculated using ORCA. 
+ISC and RISC rates were calculated using ORCA. 
 The ORCA directory contains the input and output files for the rate calculations, together with the source output files used to extract the SOCMEs and Ead.
