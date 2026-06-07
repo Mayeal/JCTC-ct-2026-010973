@@ -9,5 +9,5 @@ IC
   python extract-nacme.py cup-2t1-2dd1-XTDDFT.out $\rightarrow$ nacme.out
 - Use MOMAP to calculate IC rates.   
 
-The workflows for fluorescence and phosphorescence rate calculations are analogous to that described above for IC calculations.  
+The workflows for fluorescence calculations are analogous to that described above for IC calculations.  
 Detailed instructions for MOMAP calculations can be found on the official MOMAP website: http://www.momap.net.cn/
