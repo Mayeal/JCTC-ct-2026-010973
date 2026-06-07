@@ -1,0 +1,18 @@
+! PBE0 ZORA  ZORA-def2-SVP tightscf ESD(ISC) NOITER
+
+%pal 
+nprocs 10
+end 
+
+%maxcore 10000
+
+%ESD
+ISCISHESSIAN "4t-bdf-orca-hessian.hess"
+ISCFSHESSIAN "2t1-change-hessian.hess"
+DELE -92.40
+SOCME 0.0, -1.16e-5
+USEJ true
+TEMP 83
+END
+
+*xyzfile 0 2 2t1-change-hessian.xyz
