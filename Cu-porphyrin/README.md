@@ -1,4 +1,6 @@
-**IC Calculation Workflow**
+**Rate Calculation Workflow**
+
+IC
 
 - The equilibrium geometries, Hessian matrices, and NACMEs were obtained using BDF.
 - Use the scripts in BDF/scripts to convert BDF output files into MOMAP-compatible input files.  
