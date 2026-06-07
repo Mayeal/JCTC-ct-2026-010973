@@ -5,5 +5,4 @@ do_evc   = 1
  ffreq(1) = "2hessian_s0.out"
  ffreq(2) = "2hessian_t1.out"
  ftdipd   = "state1.out"
-sort_mode = 1
 /
