@@ -14,5 +14,5 @@ IC
 
 ISC and RISC  
 
-    ISC and RISC rates were calculated using ORCA.  
-    The ORCA directory contains the input and output files for the rate calculations, together with the source output files used to extract the SOCMEs and Ead.
+  ISC and RISC rates were calculated using ORCA.  
+  The ORCA directory contains the input and output files for the rate calculations, together with the source output files used to extract the SOCMEs and Ead.
