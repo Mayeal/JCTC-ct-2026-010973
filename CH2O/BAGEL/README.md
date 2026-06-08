@@ -7,6 +7,7 @@ After optimizing the geometry of the $CH_2O$ radical cation by BDF, the followin
 As an example, to calculate the ground state-first excited state NACME, one runs CH2O-nacme-0-1.json.
 The CASSCF state compositions (rotated by the XMS-CASPT2 rotation matrix) are found after the sections starting with "\* ci vector",
 immediately after the occurrence of "Extended multi-state CASPT2 (XMS-CASPT2) rotation matrix" in the output file.
+Note that we choose the phase such that the Slater determinant with the biggest contribution percentage has a positive coefficient.
 Refer to the comments in CH2O-nacme-0-1.json for how to calculate the NACMEs between other pairs of states.
 - Run extract.sh, generating result.csv. This is a collection of all NACME data between all pairs of states,
 which are then processed by our Octave script (see ../Octave/README.md).
