@@ -1,5 +1,5 @@
-%filename = 'CuP(2)-UTDDFT.csv';
-filename = 'CuP(2).csv';
+%filename = 'CuP-UTDDFT.csv';
+filename = 'CuP-XTDDFT.csv';
 data = csvread(filename);
 data = data(2,:);
 
