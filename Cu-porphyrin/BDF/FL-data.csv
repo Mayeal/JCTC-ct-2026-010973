@@ -1,0 +1,4 @@
+﻿# EDMA: electronic dipole moment of absorption (GS),,,
+# EDME: electronic dipole moment of emission (ES),,,
+"E(2S0, au)","E(2T1, X-TDDFT, au)",EDMA(au),EDME(au)
+-2642.61958,-2642.556951,-0.0135,0.0068
