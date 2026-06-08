@@ -1,0 +1,38 @@
+$compass
+title
+cup
+basis
+x2c-TZVPall
+geometry
+file = d2h_2t1_opt.xyz
+end geometry
+group
+D(2h)
+$end
+
+$xuanyuan
+heff
+21
+$end
+
+$scf
+ROKS
+DFT
+PBE0
+spin
+2
+molden
+threshconv
+1.d-9 1.d-8
+$end
+
+$tddft
+iroot
+2
+gridtol
+1.d-7
+crit_vec
+1.d-6
+crit_e
+1.d-8
+$end
