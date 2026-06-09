@@ -1,4 +1,4 @@
-! PBE0 ZORA  ZORA-def2-SVP tightscf ESD(ISC) NOITER
+! PBE0 ZORA  ZORA-def2-SVP tightscf ESD(ISC) NOITER    # In the absence of Herzberg¨CTeller (HT) contributions, the ZORA keyword does not affect the calculated ISC rates
 
 %pal 
 nprocs 10
@@ -9,8 +9,8 @@ end
 %ESD
 ISCISHESSIAN "2t1-bdf-orca-hessian.hess"
 ISCFSHESSIAN "4t-change-hessian.hess"
-DELE 92.40
-SOCME 0.0, 1.07e-5
+DELE 92.40                  # cm-1
+SOCME 0.0, 1.07e-5          # au
 USEJ true
 TEMP 83
 END
