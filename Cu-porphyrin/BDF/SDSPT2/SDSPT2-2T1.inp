@@ -1,0 +1,142 @@
+$compass
+title
+cup
+basis
+x2c-SVPall
+geometry
+file = x-opt.xyz
+end geometry
+group
+D(2h)
+check
+saorb
+$end
+
+%cp $BDF_WORKDIR/$BDFTASK.chkfil $BDF_WORKDIR/$BDFTASK.chkfil1
+
+$xuanyuan
+heff
+21
+$end
+
+$scf
+rohf
+spin
+2
+molden
+alpha
+25 15 4 4 2 7 19 19
+beta
+24 15 4 4 2 7 19 19
+$end
+
+%cp $BDF_WORKDIR/b2u-b3u-r10-c5-1.casorb $BDF_WORKDIR/$BDFTASK.sbforb
+
+$compass
+title
+cup
+basis-block
+x2c-SVPall
+Cu,N = x2c-TZVPall
+end basis
+geometry
+file=x-opt.xyz
+end geometry
+group
+D(2h)
+check
+saorb
+$end
+
+%cp $BDF_WORKDIR/$BDFTASK.chkfil $BDF_WORKDIR/$BDFTASK.chkfil2
+
+$xuanyuan
+heff
+21
+$end
+
+$scf
+spin
+2
+rohf
+2
+molden
+alpha
+25 15 4 4 2 7 19 19
+beta
+24 15 4 4 2 7 19 19
+$end                     # The settings above are used for basis-set projection. For details, see the BDF User Guide: https://bdf-manual.readthedocs.io/en/latest/User%20Guide.html#extending-small-basis-group-convergence-orbits-to-large-basis-group-initial-guesses
+
+%cp $BDF_WORKDIR/$BDFTASK.scforb $BDF_WORKDIR/$BDFTASK.lbforb
+
+$expandmo                # This module is used to automatically construct the active space and initial guess orbitals for MCSCF calculations.  
+sb2lb                     
+close                    # Specify the inactive orbitals.
+23 14 3 3 1 6 19 19       
+active                   # Specify the active orbitals.
+4 2 3 3 1 1 0 0
+$end
+
+%cp $BDF_WORKDIR/$BDFTASK.exporb $BDF_WORKDIR/$BDFTASK.inporb
+
+$mcscf                   # This module performs multi-configurational self-consistent field (MCSCF) calculations.
+close
+23 14 3 3 1 6 19 19
+active
+4 2 3 3 1 1 0 0
+actele                   # Specify the number of electrons in the active space.
+13
+mixci                    # Perform state-averaged calculations.
+3                        # Specify the number of symmetries to be included.
+2 2 2                    # Specify the spin multiplicity of each state.
+1 10 10                  # Specify the number of roots to be state-averaged for each state.
+1 7 8                    # Specify the irreducible representation of each state.
+iprtmo                   # Specify the print level for molecular orbitals.
+2                      
+molden                   # Export the MCSCF-optimized molecular orbitals to the $BDFTASK.mcscf.molden file.
+guess                    # Read $BDF_WORKDIR/$BDFTASK.inporb as the initial guess orbitals for the MCSCF calculation.
+read                   
+icipt2                   # Use iCI as the CASCI solver and include the ENPT2 correction.
+cmin                     # Specify the configuration-selection threshold in the iCI calculation.
+1e-5                   
+actopt                   # Specify the active-space orbital optimization method.
+2                      
+quasi                    # Specify the use of the quasi-Newton method.
+$end
+
+$xianci                  # This module performs SDSPT2 calculations.
+sdspt2
+orbtxt                   # Specify the suffix of the molecular orbital file to be read.
+casorb                   
+pmin                     # Specify the coefficient threshold for excited configurations.
+1.d-3
+noksud
+spin                     # Specify the spin multiplicity of the target electronic states.
+2
+symmetry                 # Specify the irreducible representation of the target electronic states.
+1
+roots                    # Specify the number of roots to be calculated. Here, the ground state is calculated.
+1
+print
+14
+$end
+
+$xianci 
+sdspt2
+orbtxt
+casorb
+pmin
+1.d-3
+noksud
+spin
+2
+symmetry
+7
+roots
+10                       
+istate                   # Specify the number of roots to be calculated and the indices of the target roots.  
+4                        # Specify the number of states to be calculated.
+1 2 3 10                 # Specify the indices of the selected roots.
+print
+14
+$end
