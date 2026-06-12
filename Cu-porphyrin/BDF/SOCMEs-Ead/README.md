@@ -1,5 +1,6 @@
 **SOCME Examples**
-![$^2T_1-^4T_1$](./socme.jpg)
+![$^2T_1-^4T_1$](./socme.jpg)  
+
 In BDF, for SOC calculations, the input format for each line is  
 
 fileA symA stateA fileB symB stateB  
