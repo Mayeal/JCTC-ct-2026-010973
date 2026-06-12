@@ -8,7 +8,7 @@ fileA symA stateA fileB symB stateB
 
 which represents the matrix element
 
-$\langle$ fileA, symA, stateA $| \hat{H}_{\mathrm{SOC}} \mid$ fileB, symB, stateB $\rangle$
+$\langle$ fileA, symA, stateA $| \hat{\mathrm{H}}_{\mathrm{SOC}} \mid$ fileB, symB, stateB $\rangle$
 
 Here, fileA symA stateA represents the stateA-th root of the irreducible representation symA in calculation file fileA. For example, 1 1 1 denotes the first root of the first irreducible representation in the first TDDFT calculation.  
 
