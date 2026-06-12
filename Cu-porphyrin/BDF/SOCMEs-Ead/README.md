@@ -1,4 +1,4 @@
-**SOCMEs Examples**  
+# SOCMEs Examples  
 
 ![$^2T_1-^4T_1$](./SOCMEs.jpg)  
 
@@ -15,3 +15,9 @@ Here, fileA symA stateA represents the stateA-th root of the irreducible represe
 In this example, the specified state pairs correspond to the $\mathrm{^2T_1}$ and $\mathrm{^4T_1}$ states, and the calculated matrix elements are the SOCMEs between these two electronic states.
 
 For details, see the BDF User Guide: https://bdf-manual.readthedocs.io/en/latest/User%20Guide.html#spin-orbit-coupling-calculation-based-on-sf-x2c-tddft-soc
+
+# Notes on the Calculations
+
+## Important Note
+
+For calculations with a ground-state spin multiplicity greater than 1, spin-flip-up full TDDFT is not currently available in BDF. Consequently, all calculations involving the $\mathrm{^4T_1}$ state were carried out using the TDA.
