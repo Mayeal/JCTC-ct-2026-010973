@@ -1,14 +1,14 @@
-**SOCME Examples**  
+**SOCMEs Examples**  
 
 ![$^2T_1-^4T_1$](./SOCMEs.jpg)  
 
-In BDF, for SOC calculations, the input format for each line is  
+In BDF, the output format for each SOC matrix element line is:  
 
 fileA symA stateA fileB symB stateB  
 
 which represents the matrix element
 
-<center>$\langle$ fileA, symA, stateA $| \hat{H}_{\mathrm{SOC}} \mid$ fileB, symB, stateB $\rangle$</center>
+$\langle$ fileA, symA, stateA $| \hat{H}_{\mathrm{SOC}} \mid$ fileB, symB, stateB $\rangle$
 
 Here, fileA symA stateA represents the stateA-th root of the irreducible representation symA in calculation file fileA. For example, 1 1 1 denotes the first root of the first irreducible representation in the first TDDFT calculation.  
 
