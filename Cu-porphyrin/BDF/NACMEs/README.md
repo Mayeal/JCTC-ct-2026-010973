@@ -1,0 +1,1 @@
+The input and output files with the suffixes -1 and -2 (e.g., CuP-2T1-2dd1-XTDDFT-1 and CuP-2T1-2dd1-XTDDFT-2) correspond to calculations removing $\Delta g_{IJ}^{\xi}$ and removing $\Delta g_{IJ}^{\xi}$, $\Delta\mathbf{Q}$, and $\Delta\mathbf{\Gamma}$, respectively.
