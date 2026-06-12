@@ -1,5 +1,6 @@
-**SOCME Examples**
-![$^2T_1-^4T_1$](./socme.jpg)  
+**SOCME Examples**  
+
+![$^2T_1-^4T_1$](./SCOMEs.jpg)  
 
 In BDF, for SOC calculations, the input format for each line is  
 
